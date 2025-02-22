@@ -1,22 +1,13 @@
-name: Step 1, Create a workflow
-
-# This step triggers after every push to welcome-workflow.
-# This workflow updates from step 1 to step 2.
-
-# This will run every time we push to welcome-workflow.
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+name: Post welcome comment
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - welcome-workflow
-
-# Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+  pull_request:
+    types: [opened]
 permissions:
-  # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata.
-  contents: write
-
+  pull-requests: write
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
 jobs:
   # Get the current step to only run the main job when the learner is on the same step.
   get_current_step:
@@ -69,3 +60,5 @@ jobs:
           from_step: 1
           to_step: 2
           branch_name: welcome-workflow
+          name: Post welcome comment
+          
