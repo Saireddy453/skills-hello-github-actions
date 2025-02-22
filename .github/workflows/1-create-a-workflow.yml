@@ -16,7 +16,16 @@ permissions:
   # Need `contents: read` to checkout the repository.
   # Need `contents: write` to update the step metadata.
   contents: write
-
+name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
 jobs:
   # Get the current step to only run the main job when the learner is on the same step.
   get_current_step:
@@ -69,3 +78,4 @@ jobs:
           from_step: 1
           to_step: 2
           branch_name: welcome-workflow
+          
