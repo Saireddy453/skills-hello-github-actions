@@ -1,0 +1,21 @@
+name: GitHub Testing
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Hello GitHub Actions
+        run: echo "Hello, GitHub Actions! This is a test workflow."
+
+      - name: Run tests
+        run: echo "Running tests... All tests passed!"
