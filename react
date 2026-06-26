@@ -1,1 +1,5 @@
-git checkout -b test-branch
+React is a JavaScript library for building user interfaces.
+
+To get started with React:
+- Run `npx create-react-app my-app` to scaffold a new project
+- Use GitHub Actions to automate testing and deployment

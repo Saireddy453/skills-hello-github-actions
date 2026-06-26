@@ -1,1 +1,3 @@
-testing 
+Testing is an essential part of software development.
+
+Use GitHub Actions to run automated tests on every push or pull request.
