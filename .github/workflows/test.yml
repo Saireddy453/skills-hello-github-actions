@@ -17,5 +17,5 @@ jobs:
       - name: Hello GitHub Actions
         run: echo "Hello, GitHub Actions! This is a test workflow."
 
-      - name: Run tests
+      - name: Display test message
         run: echo "Running tests... All tests passed!"
